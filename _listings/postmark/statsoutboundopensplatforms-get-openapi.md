@@ -3,8 +3,8 @@ swagger: "2.0"
 x-collection-name: Postmark
 x-complete: 0
 info:
-  title: Postmark Get Stats Outbound Opens Emailclients
-  description: Get stats outbound opens emailclients.
+  title: Postmark Get Stats Outbound Opens Platforms
+  description: Get stats outbound opens platforms.
   version: 1.0.0
 host: spamcheck.postmarkapp.com
 basePath: /
@@ -497,6 +497,34 @@ paths:
       - Outbound
       - Opens
       - Emailclients
+  /stats/outbound/opens/platforms:
+    get:
+      summary: Get Stats Outbound Opens Platforms
+      description: Get stats outbound opens platforms.
+      operationId: getStatsOutboundOpensPlatforms
+      x-api-path-slug: statsoutboundopensplatforms-get
+      parameters:
+      - in: query
+        name: fromdate
+        description: Filter stats starting from the date specified
+      - in: query
+        name: tag
+        description: Filter by tag
+      - in: query
+        name: todate
+        description: Filter stats up to the date specified
+      - in: header
+        name: X-Postmark-Server-Token
+        description: The token associated with the Server on which this request will
+          operate
+      responses:
+        200:
+          description: OK
+      tags:
+      - Stats
+      - Outbound
+      - Opens
+      - Platforms
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0
